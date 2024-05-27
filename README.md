@@ -14,3 +14,14 @@ Sometimes I get the error:
 `proxy failed to forward the response body, err: http: request method or response status code does not allow body`
 
 Which I assume is because the proxy is trying to parse HTTP requests, but this isn't HTTP, it's websocket.
+
+To reproduce:
+1. Clone repo `git clone https://github.com/nathan-hello/air-proxy-reproduce.git`
+2. `cd air-proxy-reproduce`
+3. Run `air`. The version of air that I am currently running is v1.52.0
+4. Open `localhost:8090` in two browser tabs. Neither one can send or receive messages
+
+Expected behavior:
+1. Instead of running the program with `air`, use `go run main.go`.
+2. Now in the two browser tabs go to `localhost:8080`
+3. The two tabs should be able to send/receive messages to each other
